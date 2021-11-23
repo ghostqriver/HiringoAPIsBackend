@@ -17,7 +17,7 @@ class StudentBasic(models.Model):
     class Meta:
         managed = True
         db_table = 'student_basic'
-
+        verbose_name='Student Accounts Management'
     def __str__(self):
         return str(self.student_name)
 
@@ -31,6 +31,7 @@ class TeacherBasic(models.Model):
     class Meta:
         managed = True
         db_table = 'teacher_basic'
+        verbose_name = 'Teacher Accounts Management'
 
     def __str__(self):
         return str(self.teacher_name)
@@ -58,6 +59,7 @@ class UserStudentProfile(models.Model):
     class Meta:
         managed = True
         db_table = 'user_student_profile'
+        verbose_name = 'Student Information Management'
 
     def __str__(self):
         return str(self.user)
@@ -75,6 +77,7 @@ class UserTeacherProfile(models.Model):
     class Meta:
         managed = True
         db_table = 'user_teacher_profile'
+        verbose_name = 'Teacher Information Management'
         unique_together = (('user', 'user_subject_type'),)
 
     def __str__(self):
@@ -93,6 +96,7 @@ class CourseBasic(models.Model):
     class Meta:
         managed = True
         db_table = 'course_basic'
+        verbose_name = 'Courses Management'
         unique_together = (('transaction_id', 'student'),)
 
     def __str__(self):
@@ -106,6 +110,6 @@ class SubjectBasic(models.Model):
     class Meta:
         managed = True
         db_table = 'subject_basic'
-
+        verbose_name = 'All Subject'
     def __str__(self):
         return str(self.subject_name)
